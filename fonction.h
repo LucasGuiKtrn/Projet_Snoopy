@@ -35,4 +35,30 @@ void choix ()
 
 }
 
+void map1 (int map [10][20])
+{
+    int i, j;
 
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 20; j++)
+        {
+            map[i][j] = 0;
+        }
+    }
+    map [4][9] = 8;
+}
+
+void afficheMap (int map[10][20])
+{
+    int i, j;
+
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 20; j++)
+        {
+            printf ("%d", map[i][j]);
+        }
+        printf ("\n");
+    }
+}

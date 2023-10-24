@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Lucas/Informatique ECE/Projet_Snoopy/cmake-build-debug",
-		"source" : "D:/Lucas/Informatique ECE/Projet_Snoopy"
+		"build" : "C:/Lucas/ECE/Informatique/Projet/Projet_Snoopy/cmake-build-debug",
+		"source" : "C:/Lucas/ECE/Informatique/Projet/Projet_Snoopy"
 	},
 	"version" : 
 	{
