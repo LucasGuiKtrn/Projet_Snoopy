@@ -35,30 +35,23 @@ void choix ()
 
 }
 
-void map1 (int map [10][20])
+void map1 (char map [10][20])
 {
-    int i, j;
+    FILE* fichier;
 
-    for (i = 0; i < 10; i++)
+    fichier = fopen("carte1.txt", "r");
+
+    if (fichier != NULL)
     {
-        for (j = 0; j < 20; j++)
+        int c;
+        while ((c = fgetc(fichier)) != EOF)
         {
-            map[i][j] = 0;
+            printf ("%c", c);
         }
+        fclose(fichier);
     }
-    map [4][9] = 8;
-}
-
-void afficheMap (int map[10][20])
-{
-    int i, j;
-
-    for (i = 0; i < 10; i++)
+    else
     {
-        for (j = 0; j < 20; j++)
-        {
-            printf ("%d", map[i][j]);
-        }
-        printf ("\n");
+        printf ("Il y a un probleme");
     }
 }

@@ -4,7 +4,8 @@
 
 int main ()
 {
-    int carte[10][20];
+    char carte[10][20];
     map1 (carte);
-    afficheMap(carte);
+
+    return 0;
 }
