@@ -44,7 +44,37 @@ void affichage (char map [10][20])
     {
         for (j = 0; j < 20; j++)
         {
-            printf ("%d", map[i][j]);
+            switch (map[i][j])
+            {
+                case (0):
+                    printf ("%c", 0);
+                    break;
+                case (1):
+                    printf ("%c", 0x6);
+                    break;
+                case (2):
+                    printf ("%c", 0x1A);
+                    break;
+                case (3):
+                    printf ("%c", 0x5);
+                    break;
+                case (4):
+                    printf ("%c", 0xF);
+                    break;
+                case (5):
+                    printf ("%c", 0xA);
+                case (6):
+                    printf ("%c", 0x16);
+                    break;
+                case (7):
+                    printf ("%c", 0x1);
+                    break;
+                case (8):
+                    printf ("%c", 0xB);
+                    break;
+                case (9):
+                    printf ("%c", 0xE);
+            }
         }
         printf ("\n");
     }
