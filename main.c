@@ -4,9 +4,9 @@
 int main ()
 {
     char carte[10][20]={0};
-    int tbefore, tnow , trestant=120,a;
+    int tbefore=tempsnow(), tnow , trestant=120,a;
+    menuJeu();
 
-    tbefore=tempsnow();
     while(trestant!=0) {
         tnow=tempsnow();
         a=tdif(tbefore,tnow);

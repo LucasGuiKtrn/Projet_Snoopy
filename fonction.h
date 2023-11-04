@@ -30,7 +30,7 @@ int choix ()
     puts ("Veuillez choisir l'un des menus du menu du Jeu ");
     scanf("%d", &n);
 
-    while (n < 1 || n > 7)
+    while (n <= 1 || n > 7)
     {
         puts ("Votre entier n'est pas compris entre 1 et 6. Veuillez choisir l'un des menus du menu du Jeu ");
         scanf("%d", &n);
