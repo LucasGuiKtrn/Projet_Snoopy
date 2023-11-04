@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 
 void menuJeu() {
     puts("---LA REVANCHE DE SNOOPY---\n");
@@ -22,7 +24,7 @@ void regle_du_jeu()
           "la balle et/ou les ennemis (si présents).");
 }
 
-void choix ()
+int choix ()
 {
     int n;
     puts ("Veuillez choisir l'un des menus du menu du Jeu ");
@@ -33,7 +35,7 @@ void choix ()
         puts ("Votre entier n'est pas compris entre 1 et 6. Veuillez choisir l'un des menus du menu du Jeu ");
         scanf("%d", &n);
     }
-
+    return n;
 }
 
 void affichage (char map [10][20])
@@ -46,8 +48,8 @@ void affichage (char map [10][20])
         {
             switch (map[i][j])
             {
-                case (0):
-                    printf ("%c", 0);
+                case 0:
+                    printf ("%c", 0x00);
                     break;
                 case (1):
                     printf ("%c", 0x6);
@@ -67,7 +69,7 @@ void affichage (char map [10][20])
                     printf ("%c", 0x16);
                     break;
                 case (7):
-                    printf ("%c", 0x1);
+                    printf ("%c", 0x01);
                     break;
                 case (8):
                     printf ("%c", 0xB);
@@ -120,7 +122,27 @@ void map1 (char map [10][20])
             k++;
         }
     }
-
 }
 
+int tempsnow(){
+    int secnow;
+    time_t now;
+    time(&now);
+    // Renvoie l'heure et la date actuelle
+    struct tm *local = localtime(&now);
+    secnow = local->tm_sec;
+    //prend seulement les sec
+    //printf("sec: %d\n", secnow);
+    return secnow;
+}
+
+//permet de renvoyer -1 toutes les sec
+int tdif(int secbefore,int secnow){
+    if (secbefore != secnow){
+        return -1;
+    }
+    else {
+        return 0;
+    }
+}
 
