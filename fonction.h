@@ -3,7 +3,8 @@
 #include <time.h>
 #include <conio.h>
 #include <windows.h>
-
+#include <time.h>
+#include <windows.h>
 
 void menuJeu() {
     puts("---LA REVANCHE DE SNOOPY---\n");
@@ -26,18 +27,18 @@ void regle_du_jeu()
           "la balle et/ou les ennemis (si présents).");
 }
 
-int choix ()
+void choix ()
 {
     int n;
     puts ("Veuillez choisir l'un des menus du menu du Jeu ");
     scanf("%d", &n);
 
-    while (n <= 1 || n > 7)
+    while (n < 1 || n > 7)
     {
         puts ("Votre entier n'est pas compris entre 1 et 6. Veuillez choisir l'un des menus du menu du Jeu ");
         scanf("%d", &n);
     }
-    return n;
+
 }
 
 void affichage (char map [10][20])
@@ -50,8 +51,8 @@ void affichage (char map [10][20])
         {
             switch (map[i][j])
             {
-                case 0:
-                    printf ("%c", 0x00);
+                case (0):
+                    printf ("%c", 0);
                     break;
                 case (1):
                     printf ("%c", 0x6);
@@ -71,7 +72,7 @@ void affichage (char map [10][20])
                     printf ("%c", 0x16);
                     break;
                 case (7):
-                    printf ("%c", 0x01);
+                    printf ("%c", 0x1);
                     break;
                 case (8):
                     printf ("%c", 0xB);
@@ -93,10 +94,10 @@ void map1 (char map [10][20])
 {
     int i = 0, j = 0, k = 0;
     char chaine[209]; // j'ai mis 209 car vu que le fichier renvoie une chaine de caractère, les retour à la ligne compte comme un caractère, j'ai donc converti en entier pour enlever les retour à la ligne
-    // De plus, c'est plus simple pour faire la suite
+                      // De plus, c'est plus simple pour faire la suite
     FILE* fichier;
 
-    fichier = fopen("C:\\Users\\jbirm\\OneDrive\\Documents\\GitHub\\Projet_Snoopy\\carte1.txt", "r");
+    fichier = fopen("carte1.txt", "r");
 
     if (fichier != NULL)
     {
@@ -147,14 +148,4 @@ int tdif(int secbefore,int secnow){
         return 0;
     }
 }
-int mouv(){
-    char n,a =0;
-    n= getch();
-    if (strrchr("zqsd", n)==1){
-        a=n;
-    }
-    else {
-        printf("Veuillez utiliser les touches zqsd pour jouer");
-    }
-    return a;
-}
+
