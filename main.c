@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "fonction.h"
+#include <time.h>
 
 int main ()
 {
@@ -7,8 +8,7 @@ int main ()
     int tbefore=tempsnow(), tnow , trestant=120,a;
     menuJeu();
 
-    while(trestant!=0)
-    {
+    while(trestant!=0) {
         tnow=tempsnow();
         a=tdif(tbefore,tnow);
         trestant=trestant+a;
