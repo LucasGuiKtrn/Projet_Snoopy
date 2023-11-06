@@ -7,16 +7,19 @@ int main ()
     int tbefore=tempsnow(), tnow , trestant=120,a;
     menuJeu();
 
-    while(trestant!=0) {
+    while(trestant!=0)
+    {
         tnow=tempsnow();
         a=tdif(tbefore,tnow);
         trestant=trestant+a;
         tbefore=tnow;
-        if (a==-1) {
-            map1(carte);
-            affichage(carte);
-            printf("%d",trestant);
-        }
+        position_snoopy(carte);
+        map1 (carte);
+        affichage(carte);
+        printf("%d\n",trestant);
     }
+
+
+
     return 0;
 }

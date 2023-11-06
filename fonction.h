@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
+#include <conio.h>
 
-
-void menuJeu() {
+void menuJeu()
+{
     puts("---LA REVANCHE DE SNOOPY---\n");
-
     puts("---Menu du Jeu---");
     puts("1) Regle du jeu");
-    puts("2) Lancer un nouveau jeu à partir du niveau 1");
+    puts("2) Lancer un nouveau jeu a partir du niveau 1");
     puts("3) Charger une partie");
     puts("4) Mot de passe");
     puts("5) Scores");
@@ -30,12 +31,12 @@ int choix ()
     puts ("Veuillez choisir l'un des menus du menu du Jeu ");
     scanf("%d", &n);
 
-    while (n <= 1 || n > 7)
+    while (n < 1 || n >= 7)
     {
         puts ("Votre entier n'est pas compris entre 1 et 6. Veuillez choisir l'un des menus du menu du Jeu ");
         scanf("%d", &n);
     }
-    return n;
+
 }
 
 void affichage (char map [10][20])
@@ -48,7 +49,7 @@ void affichage (char map [10][20])
         {
             switch (map[i][j])
             {
-                case 0:
+                case (0):
                     printf ("%c", 0x00);
                     break;
                 case (1):
@@ -124,7 +125,8 @@ void map1 (char map [10][20])
     }
 }
 
-int tempsnow(){
+int tempsnow()
+{
     int secnow;
     time_t now;
     time(&now);
@@ -137,12 +139,61 @@ int tempsnow(){
 }
 
 //permet de renvoyer -1 toutes les sec
-int tdif(int secbefore,int secnow){
-    if (secbefore != secnow){
+int tdif(int secbefore,int secnow) {
+    if (secbefore != secnow) {
         return -1;
-    }
-    else {
+    } else {
         return 0;
     }
 }
 
+
+char direction ()
+{
+    int n;
+
+    n = getch ();
+
+    while (strrchr("zqsd", n) == 0)
+    {
+        printf ("Veuillez utiliser les touche zqsd\n");
+        n = getch ();
+    }
+    return n;
+}
+
+
+void position_snoopy (char map [10][20])
+{
+    int i, j;
+    char touche;
+
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 20; j++)
+        {
+            if (map[i][j] == 8)
+            {
+                touche = direction ();
+                gotoligcol(i,j);
+                switch (touche)
+                {
+                    case 'z':
+                    printf ("Vous avez tape 'z'");
+                    break;
+                    case 'q':
+                        printf ("Vous avez tape 'q'");
+                        break;
+                    case 's':
+                        printf ("Vous avez tape 's'");
+                        break;
+                    case 'd':
+                        printf ("Vous avez tape 'd'");
+                        break;
+                    default :
+                        break;
+                }
+            }
+        }
+    }
+}
