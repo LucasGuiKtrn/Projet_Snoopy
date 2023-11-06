@@ -14,7 +14,7 @@ trestant =120;
         tbefore=tnow;
         map1(carte);
         affichage(carte);
-        printf("%d",trestant);
+        printf("%d\n",trestant);
     }
     return 0;
 }
