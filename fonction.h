@@ -147,6 +147,14 @@ int tdif(int secbefore,int secnow){
         return 0;
     }
 }
+int mouv(){
+    char n, a;
+    n=getch();
+    if(strrchr("zqsd", n)==1){
+        n=a;
+    }
+    return a;
+}
 
 
 char direction ()
