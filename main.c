@@ -1,13 +1,20 @@
 #include <stdio.h>
 #include "fonction.h"
 
-
 int main ()
 {
-    char carte[10][20];
+    char carte[10][20]={0};
+    int tbefore=tempsnow(), tnow , trestant=120,a;
+    menuJeu();
 
-    map1 (carte);
-    affichage(carte);
-
+    while(trestant!=0) {
+        tnow=tempsnow();
+        a=tdif(tbefore,tnow);
+        trestant=trestant+a;
+        tbefore=tnow;
+        map1(carte);
+        affichage(carte);
+        printf("%d",trestant);
+    }
     return 0;
 }
