@@ -40,50 +40,6 @@ int choix ()
     return n;
 }
 
-void affichage (char map [10][20])
-{
-    int i, j;
-
-    for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 20; j++)
-        {
-            switch (map[i][j])
-            {
-                case 0:
-                    printf ("%c", 0x00);
-                    break;
-                case (1):
-                    printf ("%c", 0x6);
-                    break;
-                case (2):
-                    printf ("%c", 0x1A);
-                    break;
-                case (3):
-                    printf ("%c", 0x5);
-                    break;
-                case (4):
-                    printf ("%c", 0xF);
-                    break;
-                case (5):
-                    printf ("%c", 0xA);
-                case (6):
-                    printf ("%c", 0x16);
-                    break;
-                case (7):
-                    printf ("%c", 0x01);
-                    break;
-                case (8):
-                    printf ("%c", 0xB);
-                    break;
-                case (9):
-                    printf ("%c", 0xE);
-            }
-        }
-        printf ("\n");
-    }
-}
-
 
 //Sous - Programme qui permet de récuperer le fichier texte où il y a la première carte du jeu
 // Le fichier texte renvoie la carte en chaine de caractère, j'ai donc converti cette chaine de caractère en entier que j'ai mis dans un tableau une dimension pour ensuite transformer ce tableau
@@ -96,7 +52,7 @@ void map1 (char map [10][20])
                       // De plus, c'est plus simple pour faire la suite
     FILE* fichier;
 
-    fichier = fopen("carte1.txt", "r");
+    fichier = fopen("C:\\Lucas\\ECE\\Informatique\\Projet_Snoopy\\carte1.txt", "r");
 
     if (fichier != NULL)
     {
@@ -147,69 +103,124 @@ int tdif(int secbefore,int secnow){
         return 0;
     }
 }
-int mouv(){
-    char n, a;
-    n=getch();
-    if(strrchr("zqsd", n)==1){
-        n=a;
-    }
-    return a;
-}
 
-void gotoligcol(int lig , int col) {
+
+void gotoligcol(int x , int y) {
     COORD mycoord;
-    mycoord.X = col;
-    mycoord.Y = lig;
+    mycoord.X = (short) x;
+    mycoord.Y = (short) y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), mycoord);
 }
 
 
-char direction ()
-{
-    int n;
-
-    n = getch ();
-
-    while (strrchr("zqsd", n) == 0)
-    {
-        printf ("Veuillez utiliser les touche zqsd\n");
-        n = getch ();
-    }
-    return n;
-}
-
-
-void position_snoopy (char map [10][20])
+void affichage (const int *x, const int *y, char map [10][20])
 {
     int i, j;
-    char touche;
+    gotoligcol(0,0);
 
     for (i = 0; i < 10; i++)
     {
         for (j = 0; j < 20; j++)
         {
-            if (map[i][j] == 8)
+            if (i==*y && j==*x)
             {
-                touche = direction ();
-                gotoligcol(i,j);
-                switch (touche)
-                {
-                    case 'z':
-                    printf ("Vous avez tape 'z'");
+                printf ("%c", 0xB);
+            }
+
+            switch (map[i][j])
+            {
+                case 0:
+                    printf ("%c", 0x00);
                     break;
-                    case 'q':
-                        printf ("Vous avez tape 'q'");
-                        break;
-                    case 's':
-                        printf ("Vous avez tape 's'");
-                        break;
-                    case 'd':
-                        printf ("Vous avez tape 'd'");
-                        break;
-                    default :
-                        break;
-                }
+                case (1):
+                    printf ("%c", 0x6);
+                    break;
+                case (2):
+                    printf ("%c", 0x1A);
+                    break;
+                case (3):
+                    printf ("%c", 0x5);
+                    break;
+                case (4):
+                    printf ("%c", 0xF);
+                    break;
+                case (5):
+                    printf ("%c", 0xA);
+                case (6):
+                    printf ("%c", 0x16);
+                    break;
+                case (7):
+                    printf ("%c", 0x01);
+                    break;
+                case (8):
+                    break;
+                case (9):
+                    printf ("%c", 0xE);
+                default:
+                    break;
             }
         }
+        printf ("\n");
     }
 }
+
+
+char direction ()
+{
+    char n;
+
+    n = (char) getch ();
+
+    while (strrchr("zqsd", n) == 0)
+    {
+        printf ("Veuillez utiliser les touche zqsd\n");
+        n = (char) getch ();
+    }
+    return n;
+}
+
+void tryMove (int *x, int *y, int vx, int vy)
+{
+    (*x)+=vx;
+    (*y)+=vy;
+}
+
+void mouvement (int *x, int *y)
+{
+    char touche;
+    touche = direction ();
+    switch (touche)
+    {
+        case 'z':
+            printf ("Vous avez tape 'z'");
+            tryMove (x, y,0,-1);
+            break;
+        case 'q':
+            printf ("Vous avez tape 'q'");
+            tryMove (x, y,-1,0);
+            break;
+        case 's':
+            printf ("Vous avez tape 's'");
+            tryMove (x, y,0,1);
+            break;
+        case 'd':
+            printf ("Vous avez tape 'd'");
+            tryMove (x, y,1,0);
+            break;
+        default :
+            break;
+    }
+}
+
+struct oiseau
+{
+    int x,y;
+    int vivant;
+};
+
+struct balle
+{
+    int x, y;
+    char v; //trace de la balle
+
+};
