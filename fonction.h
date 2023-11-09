@@ -126,39 +126,42 @@ void affichage (const int *x, const int *y, char map [10][20])
             {
                 printf ("%c", 0xB);
             }
-
-            switch (map[i][j])
+            else
             {
-                case 0:
-                    printf ("%c", 0x00);
-                    break;
-                case (1):
-                    printf ("%c", 0x6);
-                    break;
-                case (2):
-                    printf ("%c", 0x1A);
-                    break;
-                case (3):
-                    printf ("%c", 0x5);
-                    break;
-                case (4):
-                    printf ("%c", 0xF);
-                    break;
-                case (5):
-                    printf ("%c", 0xA);
-                case (6):
-                    printf ("%c", 0x16);
-                    break;
-                case (7):
-                    printf ("%c", 0x01);
-                    break;
-                case (8):
-                    break;
-                case (9):
-                    printf ("%c", 0xE);
-                default:
-                    break;
+                switch (map[i][j])
+                {
+                    case 0:
+                        printf ("%c", 0x00);
+                        break;
+                    case (1):
+                        printf ("%c", 0x6);
+                        break;
+                    case (2):
+                        printf ("%c", 0x1A);
+                        break;
+                    case (3):
+                        printf ("%c", 0x5);
+                        break;
+                    case (4):
+                        printf ("%c", 0xF);
+                        break;
+                    case (5):
+                        printf ("%c", 0xA);
+                    case (6):
+                        printf ("%c", 0x16);
+                        break;
+                    case (7):
+                        printf ("%c", 0x01);
+                        break;
+                    case (8):
+                        break;
+                    case (9):
+                        printf ("%c", 0xE);
+                    default:
+                        break;
+                }
             }
+
         }
         printf ("\n");
     }

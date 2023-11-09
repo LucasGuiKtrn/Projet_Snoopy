@@ -7,7 +7,7 @@ int main ()
     char carte[10][20]={0};
     int tbefore=tempsnow(), tnow , trestant=120,a;
     //menuJeu();
-    int x = 1, y = 3 ;
+    int x = 5, y = 4 ;
 
     while(trestant!=0) {
         tnow=tempsnow();
