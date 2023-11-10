@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Lucas/ECE/Informatique/Projet_Snoopy/main.c" "CMakeFiles/Projet_Snoopy.dir/main.c.obj" "gcc" "CMakeFiles/Projet_Snoopy.dir/main.c.obj.d"
+  "C:/Users/jbirm/OneDrive/Documents/GitHub/Projet_Snoopy/Projet_Snoopy/main.c" "CMakeFiles/Projet_Snoopy.dir/main.c.obj" "gcc" "CMakeFiles/Projet_Snoopy.dir/main.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

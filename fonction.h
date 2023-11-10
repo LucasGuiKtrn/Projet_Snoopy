@@ -168,47 +168,47 @@ void affichage (const int *x, const int *y, char map [10][20])
 }
 
 
-char direction ()
+char direction ()                //fonction permettant de savoir sur quelles touches le joueur appuie
 {
-    char n;
+    char n;                     //déclare n
 
-    n = (char) getch ();
+    n = (char) getch ();        // stocke la valeur de l'input du joueur dans la variable n
 
-    while (strrchr("zqsd", n) == 0)
+    while (strrchr("zqsd", n) == 0)      //empêche le joueur d'utiliser une touche qui ne correspond pas à une des touches prévues pour les mouvements de Snoopy
     {
         printf ("Veuillez utiliser les touche zqsd\n");
-        n = (char) getch ();
+        n = (char) getch ();                      //redemande une nouvelle entrée de touche si la dernière n'était pas prise en charge par le programme
     }
-    return n;
+    return n;                                     //renvoie n qui contient l'input du joueur
 }
 
-void tryMove (int *x, int *y, int vx, int vy)
-{
-    (*x)+=vx;
-    (*y)+=vy;
-}
+void tryMove (int *x, int *y, int vx, int vy)      //fonction qui modifie les coordonnées de Snoopy et prend en
+{                                                  //paramètre les valeurs des coordonnées actuelles de Snoopy
+    (*x)+=vx;                                      //et les valeurs du changement qu'on veut apporter aux coordonnées
+    (*y)+=vy;                                      //-1 fait reculer d'une case, 1 avancer (soit d'une colonne
+}                                                  // soit d'une ligne) et 0 conserve les mêmes coordonnées
 
-void mouvement (int *x, int *y)
-{
+void mouvement (int *x, int *y)  //Fonction qui permet de faire bouger Snoopy et qui prend en paramètre les valeurs
+{                                //des coordonnées de Snoopy
     char touche;
-    touche = direction ();
-    switch (touche)
+    touche = direction ();       //Récupère l'input du joueur en avec la fonction direction et la stocke dans touche
+    switch (touche)              //switch qui teste la valeur de l'input
     {
         case 'z':
             printf ("Vous avez tape 'z'");
-            tryMove (x, y,0,-1);
+            tryMove (x, y,0,-1);        //si le joueur appuie sur z, il monte d'une ligne
             break;
         case 'q':
             printf ("Vous avez tape 'q'");
-            tryMove (x, y,-1,0);
+            tryMove (x, y,-1,0);        //si le joueur appuie sur q, il va dans la colonne à sa gauche
             break;
         case 's':
             printf ("Vous avez tape 's'");
-            tryMove (x, y,0,1);
+            tryMove (x, y,0,1);         //si le joueur appuie sur s, il descend d'une ligne
             break;
         case 'd':
             printf ("Vous avez tape 'd'");
-            tryMove (x, y,1,0);
+            tryMove (x, y,1,0);         //si le joueur appuie sur d, il va dans la colonne à sa gauche
             break;
         default :
             break;
