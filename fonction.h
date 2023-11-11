@@ -47,25 +47,25 @@ int choix ()
 
 void map1 (char map [10][20])
 {
-    int i = 0, j = 0, k = 0;
-    char chaine[209]; // j'ai mis 209 car vu que le fichier renvoie une chaine de caractère, les retour à la ligne compte comme un caractère, j'ai donc converti en entier pour enlever les retour à la ligne
+    int i = 0, j = 0, k = 0;  //Initialisation entier i=0 ; entier j=0 ; entier k=0 ; chaine de 209 caractères
+    char chaine[209]; // j'ai mis 209 car vu que le fichier renvoie une chaine de caractère, les retour à la ligne comptent comme 1 caractère, j'ai donc converti en entier pour enlever les retours à la ligne
                       // De plus, c'est plus simple pour faire la suite
-    FILE* fichier;
+    FILE* fichier;  //Déclaration de "fichier" de type FILE*
 
-    fichier = fopen("C:\\Lucas\\ECE\\Informatique\\Projet_Snoopy\\carte1.txt", "r");
+    fichier = fopen("C:\\Lucas\\ECE\\Informatique\\Projet_Snoopy\\carte1.txt", "r"); // Lire le fichier "carte1.txt"
 
-    if (fichier != NULL)
+    if (fichier != NULL) //Si l'ouverture du fichier texte n'indique pas d'état d'erreur
     {
         char c;
-        while ((c = (char) fgetc(fichier)) != EOF)
+        while ((c = (char) fgetc(fichier)) != EOF)  //Tant que c (qui est égal au caractère lu dans le fichier et convertit en caractère) est différent du dernier caractère du fichier
         {
-            if (c != '\n')
+            if (c != '\n') //Si c est différent d'un retour à la ligne
             {
-                chaine[i] = atoi(&c);
+                chaine[i] = atoi(&c);  //Conversion du caractère c en entier et le stocke dans un tableau chaine à la position i
                 i++;
             }
         }
-        fclose(fichier);
+        fclose(fichier); //Fermeture du fichier texte
     }
     else
     {
@@ -76,7 +76,7 @@ void map1 (char map [10][20])
     {
         for (j = 0; j < 20; j++)
         {
-            map[i][j] = chaine [k];
+            map[i][j] = chaine [k]; //On met la valeur de k de la chaine dans la case [i][j] du tableau
             k++;
         }
     }

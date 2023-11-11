@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/jbirm/OneDrive/Documents/GitHub/Projet_Snoopy/Projet_Snoopy
+# Install script for directory: C:/Users/plume/Documents/GitHub/Projet_Snoopy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/jbirm/OneDrive/Documents/GitHub/Projet_Snoopy/Projet_Snoopy/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/plume/Documents/GitHub/Projet_Snoopy/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
