@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = 
 
-C_FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+C_FLAGS = -fdiagnostics-color=always   -v
 
