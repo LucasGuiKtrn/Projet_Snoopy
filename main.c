@@ -20,6 +20,27 @@ int main ()
     }
 
 
+    // Fonction main allant avec la balle (UNDER CONSTRUCTION) (Les // en début de ligne sont à enlever, les autres non):
+//    char map[10][20];
+    // Position initiale de la balle
+//    int balleX = 10 / 2;
+//    int balleY = 20 / 2;
+
+    // Boucle de jeu
+//    while (1) {
+
+        // Déplacer et afficher la balle
+//        deplacerBalle(map, &balleX, &balleY);
+
+        // Enregistrer le temps actuel
+//        time_t tempsActuel = time(NULL);
+
+        // Attendre 0.5 seconde avant de continuer
+//        while (time(NULL) - tempsActuel < 0.5);
+
+//    }
+
+
 
     return 0;
 }

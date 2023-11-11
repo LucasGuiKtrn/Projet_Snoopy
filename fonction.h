@@ -227,3 +227,45 @@ struct balle
     char v; //trace de la balle
 
 };
+
+// Ok bon j'ai commencé à voir pour la balle. Pour l'instant normalament son déplacement aléatoire et
+// le fait qu'elle rebondie sur les bords de la carte ça fonctionne à peu près. J'ai aussi trouvé un
+// moyen pour qu'elle apparaisse bien en temps qu'emoji comme demandé.
+// Il me restera à faire tout ce qui est collision avec Snoopy, l'affichage du GAME OVER en cas de collision
+// et le non-effaçage des obstacles sur lesquels elle pase.
+// Pour l'instant je l'ai mise en commentaire pour être sûr que ça n'affecte pas négativement le reste
+// du programme (les // avancés en début de ligne sont à enlever, pas les autres).
+
+// Fonction pour déplacer la balle
+//void deplacerBalle(char map[10][20], int *balleX, int *balleY) {
+    // Déplacement aléatoire en diagonale (avec position de la balle sur (x,y) )
+//    int directionX = rand() % 2 ? 1 : -1;   // assigne aléatoirement une postion sur l'axe x
+//    int directionY = rand() % 2 ? 1 : -1;   // asigne aléatoirement une postion sur l'axe y
+
+    // Pour que la balle s'affiche sous forme d'emoji comme demandé, pour l'instant j'ai fait ça car ça
+    // fonctionne pas avec la table ANSI fournie (ça me met tjs une erreur) donc pour l'instant j'ai
+    // fait avec char mais si quelqu'un a la solution je suis preneur.
+//    char balle[] = "☺";
+
+    // Supprime l'ancienne position de la balle
+//    map[*balleX][*balleY] = ' ';
+
+    // Déplace la balle
+//    *balleX += directionX;   // déplace la balle à la position assignée en x
+//    *balleY += directionY;   // déplace la balle à la position assignée en y
+
+    // Gestion des rebonds sur les bords
+
+    // En gros si la balle arrive aux limites de la carte sur x, elle va rebondir.
+//    if (*balleX < 0 || *balleX >= 10) {
+//        *balleX = (*balleX < 0) ? 0 : 10 - 1;
+//    }
+
+    // Là si la balle arrive aux limites de la carte sur y, elle va rebondir.
+//    if (*balleY < 0 || *balleY >= 20) {
+//        *balleY = (*balleY < 0) ? 0 : 20 - 1;
+//    }
+
+    // Affiche la balle à sa nouvelle position.
+//    map[*balleX][*balleY] = balle[0];
+//}
