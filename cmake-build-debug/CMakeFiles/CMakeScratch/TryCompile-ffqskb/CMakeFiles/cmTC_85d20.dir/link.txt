@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_85d20.dir/objects.a
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\cmTC_85d20.dir/objects.a @CMakeFiles\cmTC_85d20.dir\objects1.rsp
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_85d20.dir/objects.a -Wl,--no-whole-archive -o cmTC_85d20.exe -Wl,--out-implib,libcmTC_85d20.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

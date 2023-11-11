@@ -1,2 +1,2 @@
-# Empty dependencies file for cmTC_85d20.
+# Empty dependencies file for Projet_Snoopy.
 # This may be replaced when dependencies are built.
